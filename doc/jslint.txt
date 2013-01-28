@@ -10,11 +10,10 @@ INTRODUCTION                                                          *jslint*
 This plugin integrates JSLint into Vim, using the quickfix window.  The plugin
 doesn't take any command line flags to pass to jslint; instead it relies on
 inline directives placed in the .js files themselves via specially formatted
-comments (see the JSLint website).
+comments such as /*jslint ... */ and /*global ... */ (see the JSLint website).
 
-:JSLint {file}                                                       *:JSLint* 
+:JSLint                                                              *:JSLint*
 
-    Run jslint on {file}.  If {file} is not given, runs on the current buffer.
-
-    Uses the |:grep| command's infrastructure, and shows results in the quickfix
-    window.
+    Run jslint on the currently open file.  The error report will be shown in
+    the quickfix window.  Use j and k to navigate, enter to move to the
+    highlighted error, and q to close the quickfix window.
