@@ -30,13 +30,25 @@ function! s:JSLint(cmd, args)
         let cmdline = [a:cmd]
         
         call add(cmdline, l:fileargs)
-        "silent execute join(cmdline)
-        echo join(cmdline)
+        silent execute join(cmdline)
     finally
         " Restore the old grep settings.
         let &grepprg=grepprg_bak
         let &grepformat=grepformat_bak
     endtry
+
+    if len(getqflist()) > 0
+        botright copen
+
+        exec "nnoremap <silent> <buffer> q :ccl<CR>"
+
+        redraw!
+    else
+        cclose
+        redraw!
+
+        echo "JSHint: " . l:fileargs . " is OK"
+    endif
 endfunction
 
 command! -bang -nargs=* -complete=file JSLint call s:JSLint('grep<bang>',<q-args>)
