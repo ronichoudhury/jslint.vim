@@ -1,0 +1,20 @@
+*jslint.vim*  A quickfix plugin for Node jslint.
+
+==============================================================================
+Author: A.N.M. "Roni" Imroz Choudhury                          *jslint-author*
+License: See *LICENSE* file
+
+==============================================================================
+INTRODUCTION                                                          *jslint*
+
+This plugin integrates JSLint into Vim, using the quickfix window.  The plugin
+doesn't take any command line flags to pass to jslint; instead it relies on
+inline directives placed in the .js files themselves via specially formatted
+comments (see the JSLint website).
+
+:JSLint {file}                                                       *:JSLint* 
+
+    Run jslint on {file}.  If {file} is not given, runs on the current buffer.
+
+    Uses the |:grep| command's infrastructure, and shows results in the quickfix
+    window.
