@@ -6,7 +6,7 @@
 
 " Get a handle to the jslint program
 if !exists("g:jslintprg")
-    let g:jslintprg="jslint"
+    let g:jslintprg="jslint $*"
 endif
 
 function! s:JSLint(cmd, args)
@@ -26,7 +26,7 @@ function! s:JSLint(cmd, args)
     " Perform the jslint operation.
     try
         let &grepprg=g:jslintprg
-        let &grepformat=""
+        let &grepformat="%-P%f,%A%>\ #%\\d%\\+\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,%-G%f\ is\ OK.,%-Q"
         let cmdline = [a:cmd]
         
         call add(cmdline, l:fileargs)
@@ -47,8 +47,9 @@ function! s:JSLint(cmd, args)
         cclose
         redraw!
 
-        echo "JSHint: " . l:fileargs . " is OK"
+        "echo "JSHint: " . l:fileargs . " is OK"
     endif
+
 endfunction
 
 command! -bang -nargs=* -complete=file JSLint call s:JSLint('grep<bang>',<q-args>)
