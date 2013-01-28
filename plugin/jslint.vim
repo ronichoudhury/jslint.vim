@@ -39,4 +39,4 @@ function! s:JSLint(cmd, args)
     endtry
 endfunction
 
-command! -bang -nargs=* -complete=file JSLint call s:JSHint('grep<bang>',<q-args>)
+command! -bang -nargs=* -complete=file JSLint call s:JSLint('grep<bang>',<q-args>)
