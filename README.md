@@ -12,8 +12,8 @@ Packaged Modules](https://npmjs.org/).  Install that, and then
 
 ## Installation
 
-Use [Vundle]{https://github.com/gmarik/vundle} or
-[Pathogen]{https://github.com/tpope/vim-pathogen/}.  Easy!
+Use [Vundle](https://github.com/gmarik/vundle) or
+[Pathogen](https://github.com/tpope/vim-pathogen/).  Easy!
 
 ## Usage
 
@@ -21,7 +21,7 @@ Open a file you want to de-lint, then simply do
 
     :JSLint
 
-The quickfix window will open, and you can use `j` and `j` to navigate through
+The quickfix window will open, and you can use `j` and `k` to navigate through
 the error list, `<CR>` to select an error to jump to and fix, and `q` to close
 the quickfix window.
 
