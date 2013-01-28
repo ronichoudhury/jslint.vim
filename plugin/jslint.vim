@@ -24,8 +24,7 @@ function! s:JSLint(cmd)
     try
         " Set the appropriate grep options.
         let &grepprg=g:jslintprg
-        "let &grepformat="%-P%f,%A%>\ #%\\d%\\+\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,%-G%f\ is\ OK.,%-Q"
-        let &grepformat="%-P%f,%A%>\ #%n\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,%-G%f\ is\ OK.,%-Q"
+        let &grepformat="%-P%f,%A%>%\\s%\\?#%\\d%\\+\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,%-G%f\ is\ OK.,%-Q"
 
         " Construct the execution line.
         let cmdline = [a:cmd]
