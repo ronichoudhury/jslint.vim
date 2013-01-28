@@ -6,7 +6,7 @@
 
 " Get a handle to the jslint program
 if !exists("g:jslintprg")
-    let g:jslintprg="jslint $*"
+    let g:jslintprg="jslint"
 endif
 
 function! s:JSLint(cmd, args)
@@ -47,7 +47,7 @@ function! s:JSLint(cmd, args)
         cclose
         redraw!
 
-        "echo "JSHint: " . l:fileargs . " is OK"
+        echo "JSHint: " . l:fileargs . " is OK"
     endif
 
 endfunction
