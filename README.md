@@ -10,6 +10,10 @@ Packaged Modules](https://npmjs.org/).  Install that, and then
 
     npm install -g jslint
 
+This plugin was inspired by Andreas Wålm's excellent
+[jshint.vim](https://github.com/walm/jshint.vim) plugin, but I needed JSLint's
+extra shot of stick-in-the-mudness for my projects.  Use it for good.
+
 ## Installation
 
 Use [Vundle](https://github.com/gmarik/vundle) or
