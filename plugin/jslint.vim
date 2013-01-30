@@ -50,7 +50,7 @@ function! s:JSLint(cmd)
         cclose
         redraw!
 
-        echo "JSHint: " . l:fileargs . " is OK"
+        echo "JSLint: " . l:fileargs . " is OK"
     endif
 endfunction
 
